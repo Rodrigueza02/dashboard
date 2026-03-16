@@ -116,9 +116,8 @@ const integrations = [
 
 export default function Sidebar() {
   return (
-    <aside className="w-[260px] bg-white border-r border-[#E5E7EB] flex flex-col h-screen fixed left-0 top-0">
-      {/* Logo */}
-      <div className="px-6 py-5 flex items-center gap-2">
+<aside className="hidden md:flex md:w-[260px] bg-white border-r border-[#E5E7EB] md:flex-col h-screen md:fixed left-0 top-0 z-50 overflow-y-auto scrollbar-hide">      {/* Logo */}
+      <div className="px-6 py-4 md:py-5 flex items-center gap-2 flex-shrink-0">
         <LogoIcon />
         <span className="text-xl font-semibold text-gray-900">flex</span>
       </div>
@@ -129,7 +128,7 @@ export default function Sidebar() {
       </div>
 
       {/* Menu Items */}
-      <nav className="px-4 py-3 flex-1">
+      <nav className="px-4 py-3 flex-1 min-h-0 overflow-y-auto">
         <ul className="space-y-1">
           {menuItems.map((item) => {
             const IconComponent = item.icon
@@ -143,15 +142,15 @@ export default function Sidebar() {
                       : "text-gray-600 hover:bg-indigo-50"
                   }`}
                 >
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-3 min-w-0">
                     <IconComponent />
-                    <span>{item.label}</span>
+                    <span className="truncate">{item.label}</span>
                   </div>
                   {item.hasDropdown && (
-                    <ChevronDown size={16} className="opacity-60" />
+                    <ChevronDown size={16} className="opacity-60 flex-shrink-0" />
                   )}
                   {item.badge && (
-                    <span className="bg-[#22C55E] text-white text-xs font-medium px-2 py-0.5 rounded-full">
+                    <span className="bg-[#22C55E] text-white text-xs font-medium px-2 py-0.5 rounded-full flex-shrink-0">
                       {item.badge}
                     </span>
                   )}
@@ -176,7 +175,7 @@ export default function Sidebar() {
                     className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-indigo-50 transition-all"
                   >
                     <IconComponent />
-                    <span>{item.label}</span>
+                    <span className="truncate">{item.label}</span>
                   </a>
                 </li>
               )
@@ -186,13 +185,13 @@ export default function Sidebar() {
       </nav>
 
       {/* Logout */}
-      <div className="px-4 pb-6">
+      <div className="px-4 pb-4 md:pb-6 flex-shrink-0">
         <a
           href="#"
           className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-gray-600 hover:bg-indigo-50 transition-all"
         >
           <LogoutIcon />
-          <span>Logout</span>
+          <span className="truncate">Logout</span>
         </a>
       </div>
     </aside>

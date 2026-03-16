@@ -45,17 +45,17 @@ export default function StatCard({ title, value, change, icon }: StatCardProps) 
   const isPositive = change > 0
 
   return (
-    <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
-      <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-[#EEF0FF] rounded-xl flex items-center justify-center">
+    <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-sm border border-gray-100 w-full">
+      <div className="flex items-center gap-3 sm:gap-4">
+        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#EEF0FF] rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
           <IconComponent />
         </div>
-        <div>
-          <p className="text-xs text-gray-500 mb-1">{title}</p>
-          <div className="flex items-baseline gap-2">
-            <span className="text-3xl font-bold text-gray-900">{value}</span>
+        <div className="min-w-0">
+          <p className="text-xs sm:text-sm text-gray-500 mb-1">{title}</p>
+          <div className="flex items-baseline gap-2 flex-wrap">
+            <span className="text-2xl sm:text-3xl font-bold text-gray-900">{value}</span>
             <span
-              className={`text-xs font-medium ${
+              className={`text-xs font-medium whitespace-nowrap ${
                 isPositive ? "text-[#22C55E]" : "text-red-500"
               }`}
             >

@@ -9,17 +9,17 @@ const CircleArrowIcon = () => (
 
 export default function UpgradeCard() {
   return (
-    <div className="bg-gradient-to-br from-[#5B6CFF] via-[#6B7BFF] to-[#8B9AFF] rounded-2xl p-6 relative overflow-hidden h-full min-h-[180px]">
+    <div className="bg-gradient-to-br from-[#5B6CFF] via-[#6B7BFF] to-[#8B9AFF] rounded-xl sm:rounded-2xl p-4 sm:p-6 relative overflow-hidden h-full min-h-[160px] sm:min-h-[180px] w-full">
       {/* Cloud decorations */}
-      <div className="absolute top-4 right-16">
-        <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+      <div className="absolute top-4 right-12 sm:right-16">
+        <svg width="35" height="21" viewBox="0 0 40 24" fill="none">
           <ellipse cx="20" cy="16" rx="16" ry="8" fill="white" fillOpacity="0.2"/>
           <ellipse cx="12" cy="12" rx="10" ry="6" fill="white" fillOpacity="0.15"/>
           <ellipse cx="28" cy="10" rx="8" ry="5" fill="white" fillOpacity="0.15"/>
         </svg>
       </div>
-      <div className="absolute top-12 right-4">
-        <svg width="30" height="18" viewBox="0 0 30 18" fill="none">
+      <div className="absolute top-10 sm:top-12 right-2 sm:right-4">
+        <svg width="26" height="16" viewBox="0 0 30 18" fill="none">
           <ellipse cx="15" cy="12" rx="12" ry="6" fill="white" fillOpacity="0.15"/>
           <ellipse cx="10" cy="9" rx="7" ry="4" fill="white" fillOpacity="0.1"/>
         </svg>
@@ -27,18 +27,18 @@ export default function UpgradeCard() {
       
       {/* Content */}
       <div className="relative z-10">
-        <h3 className="text-xl font-bold text-white mb-1">Need More Stats?</h3>
-        <p className="text-sm text-white/70 mb-4">
+        <h3 className="text-lg sm:text-xl font-bold text-white mb-1">Need More Stats?</h3>
+        <p className="text-xs sm:text-sm text-white/70 mb-3 sm:mb-4">
           Upgrade to pro for added benefits.
         </p>
-        <button className="flex items-center gap-2 px-5 py-2.5 bg-[#22C55E] rounded-full text-sm font-medium text-white hover:bg-[#16A34A] transition-colors shadow-lg">
+        <button className="flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-[#22C55E] rounded-full text-xs sm:text-sm font-medium text-white hover:bg-[#16A34A] transition-colors shadow-lg">
           <CircleArrowIcon />
           <span>Go Pro Now</span>
         </button>
       </div>
 
       {/* Decorative Illustration - Person with flag/chart */}
-      <div className="absolute right-0 bottom-0">
+      <div className="absolute right-0 bottom-0 hidden sm:block">
         <svg
           width="110"
           height="130"
