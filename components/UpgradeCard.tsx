@@ -1,73 +1,98 @@
-// Info icon for Go Pro button
-const InfoIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-    <path d="M12 16V12" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-    <path d="M12 8H12.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+// Circular arrow icon for Go Pro button
+const CircleArrowIcon = () => (
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2"/>
+    <path d="M12 8V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    <path d="M8 12L12 8L16 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
   </svg>
 )
 
 export default function UpgradeCard() {
   return (
-    <div className="bg-gradient-to-br from-[#5B6CFF] to-[#7B8AFF] rounded-2xl p-6 relative overflow-hidden h-full min-h-[180px]">
+    <div className="bg-gradient-to-br from-[#5B6CFF] via-[#6B7BFF] to-[#8B9AFF] rounded-2xl p-6 relative overflow-hidden h-full min-h-[180px]">
+      {/* Cloud decorations */}
+      <div className="absolute top-4 right-16">
+        <svg width="40" height="24" viewBox="0 0 40 24" fill="none">
+          <ellipse cx="20" cy="16" rx="16" ry="8" fill="white" fillOpacity="0.2"/>
+          <ellipse cx="12" cy="12" rx="10" ry="6" fill="white" fillOpacity="0.15"/>
+          <ellipse cx="28" cy="10" rx="8" ry="5" fill="white" fillOpacity="0.15"/>
+        </svg>
+      </div>
+      <div className="absolute top-12 right-4">
+        <svg width="30" height="18" viewBox="0 0 30 18" fill="none">
+          <ellipse cx="15" cy="12" rx="12" ry="6" fill="white" fillOpacity="0.15"/>
+          <ellipse cx="10" cy="9" rx="7" ry="4" fill="white" fillOpacity="0.1"/>
+        </svg>
+      </div>
+      
       {/* Content */}
       <div className="relative z-10">
-        <h3 className="text-xl font-semibold text-white mb-2">Need More Stats?</h3>
-        <p className="text-sm text-white/80 mb-4">
+        <h3 className="text-xl font-bold text-white mb-1">Need More Stats?</h3>
+        <p className="text-sm text-white/70 mb-4">
           Upgrade to pro for added benefits.
         </p>
-        <button className="flex items-center gap-2 px-4 py-2.5 bg-white rounded-full text-sm font-medium text-[#22C55E] hover:bg-gray-50 transition-colors">
-          <InfoIcon />
+        <button className="flex items-center gap-2 px-5 py-2.5 bg-[#22C55E] rounded-full text-sm font-medium text-white hover:bg-[#16A34A] transition-colors shadow-lg">
+          <CircleArrowIcon />
           <span>Go Pro Now</span>
         </button>
       </div>
 
-      {/* Decorative Illustration - Person with chart */}
-      <div className="absolute right-2 bottom-0">
+      {/* Decorative Illustration - Person with flag/chart */}
+      <div className="absolute right-0 bottom-0">
         <svg
-          width="120"
-          height="140"
-          viewBox="0 0 120 140"
+          width="110"
+          height="130"
+          viewBox="0 0 110 130"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          {/* Chart bars in background */}
-          <rect x="5" y="90" width="12" height="35" rx="3" fill="white" fillOpacity="0.2" />
-          <rect x="22" y="70" width="12" height="55" rx="3" fill="white" fillOpacity="0.25" />
-          <rect x="39" y="50" width="12" height="75" rx="3" fill="white" fillOpacity="0.3" />
-          
-          {/* Dashed trend line */}
+          {/* Chart/graph line going up */}
           <path
-            d="M10 85 L45 45"
+            d="M15 95 L25 85 L35 90 L50 60 L65 45"
             stroke="white"
             strokeWidth="2"
             strokeLinecap="round"
-            strokeDasharray="4 4"
-            opacity="0.5"
+            opacity="0.4"
           />
           
-          {/* Person - head */}
-          <circle cx="85" cy="35" r="12" fill="#FCD34D" />
+          {/* Flag at top */}
+          <path
+            d="M65 45 L65 25 L85 32 L65 39"
+            fill="white"
+            fillOpacity="0.5"
+          />
+          <line x1="65" y1="45" x2="65" y2="20" stroke="white" strokeWidth="2" opacity="0.6"/>
           
-          {/* Person - body */}
-          <path d="M75 50 C75 50 70 85 72 100 L78 100 L82 70 L88 70 L92 100 L98 100 C100 85 95 50 95 50 C95 50 90 47 85 47 C80 47 75 50 75 50Z" fill="#1F2937" />
+          {/* Arrow pointing up */}
+          <path
+            d="M60 30 L65 20 L70 30"
+            stroke="white"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            opacity="0.6"
+          />
           
-          {/* Person - arm pointing */}
-          <path d="M72 55 L55 45" stroke="#1F2937" strokeWidth="6" strokeLinecap="round" />
+          {/* Person - head (dark skin) */}
+          <circle cx="75" cy="55" r="10" fill="#8B5A2B" />
           
-          {/* Person - legs */}
-          <rect x="74" y="100" width="8" height="25" fill="#1F2937" />
-          <rect x="88" y="100" width="8" height="25" fill="#1F2937" />
+          {/* Person - hair */}
+          <path d="M67 50 Q75 42 83 50" fill="#2D1810" />
+          
+          {/* Person - body/shirt (white) */}
+          <path d="M65 65 Q65 75 67 95 L83 95 Q85 75 85 65 Q85 60 75 60 Q65 60 65 65Z" fill="white" />
+          
+          {/* Person - arm pointing up */}
+          <path d="M68 68 L55 50" stroke="#8B5A2B" strokeWidth="5" strokeLinecap="round" />
+          
+          {/* Person - pants (dark) */}
+          <path d="M67 95 L65 120 L72 120 L75 100 L78 120 L85 120 L83 95 Z" fill="#1F2937" />
           
           {/* Person - shoes */}
-          <ellipse cx="78" cy="127" rx="6" ry="3" fill="#374151" />
-          <ellipse cx="92" cy="127" rx="6" ry="3" fill="#374151" />
+          <ellipse cx="68" cy="122" rx="5" ry="3" fill="#374151" />
+          <ellipse cx="82" cy="122" rx="5" ry="3" fill="#374151" />
         </svg>
       </div>
-
-      {/* Background decorative circles */}
-      <div className="absolute top-0 right-20 w-24 h-24 bg-white/10 rounded-full -translate-y-1/2"></div>
-      <div className="absolute bottom-10 left-0 w-16 h-16 bg-white/5 rounded-full -translate-x-1/2"></div>
     </div>
   )
 }
